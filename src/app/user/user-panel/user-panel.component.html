@@ -1,0 +1,17 @@
+<div class="user-panel">
+    <h2>User Panel</h2>
+    <p><strong>Email:</strong> {{ userEmail }}</p>
+  
+    <h3>Comments:</h3>
+    <ul>
+      <li *ngFor="let comment of userComments">
+        <div class="user-comment" (click)="toggleDeleteButton(comment)">
+          <span class="user-comment-text">{{ comment.comment }}</span>
+          <button *ngIf="comment.showDeleteButton" class="delete-button" (click)="deleteComment(comment.id)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  
+    <button (click)="closePanel()" class="close">Close Panel</button>
+  </div>
+  

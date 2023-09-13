@@ -1,0 +1,11 @@
+<div class="user-list">
+    <h2>User List</h2>
+    <ul>
+      <li *ngFor="let user of users" (click)="selectUser(user.id)">
+        <a [routerLink]="['/user', user.id]">{{ user.email }}</a>
+        <button (click)="showComments(user.id)">Show Comments</button>
+    
+      </li>
+    </ul>
+  </div>
+  
